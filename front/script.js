@@ -10,3 +10,4 @@ navItems.forEach(item => {
 window.addEventListener('resize', e => {
   // toggle the visibility of the navigation bar on small screens
 });
+console.log('hejfasdf')
