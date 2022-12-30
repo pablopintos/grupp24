@@ -18,8 +18,8 @@ body {
   }
   img {
     width: 25px;
-    height:auto;
-    float:left;
+    height:25px;
+    float: left;
     padding-top: 5px;
   }
   .nav-item {
@@ -33,7 +33,7 @@ body {
 
   
   nav {
-    width: 200px; /* Set the width of the navigation bar */
+    width: 250px; /* Set the width of the navigation bar */
   }
   
   ul {
@@ -42,15 +42,17 @@ body {
   
   li {
     margin-bottom: 10px; /* Add some space between the menu items */
-    
+    font-family: 'Seymour One', sans-serif;
+    font-size: x-large;
 
   }
   
   a {
     display: block; /* Make the links block-level elements to fill the entire width of the list item */
-    padding: 10px; /* Add some padding to the links */
     text-decoration: none; /* Remove the default underline from the links */
     color: #fff;
+    font-family: 'Seymour One', sans-serif;
+
   }
   
 p  {
@@ -58,6 +60,8 @@ p  {
   padding: 10px; /* Add some padding to the links */
   text-decoration: none; /* Remove the default underline from the links */
   color: #fff;
+  font-family: 'Seymour One', sans-serif;
+
 }
   a:hover {
     background-color: #eee; /* Change the background color of the links when hovered over */
