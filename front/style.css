@@ -64,7 +64,7 @@ p  {
 
 }
   a:hover, li:hover {
-    background-color: #eee; /* Change the background color of the links when hovered over */
+    background-color: rgb(110, 95, 95); /* Change the background color of the links when hovered over */
     border-radius: 1px;
   }
   
