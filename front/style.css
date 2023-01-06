@@ -63,7 +63,7 @@ p  {
   font-family: 'Seymour One', sans-serif;
 
 }
-  a:hover {
+  a:hover, li:hover {
     background-color: #eee; /* Change the background color of the links when hovered over */
     border-radius: 1px;
   }
