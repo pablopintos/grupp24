@@ -26,11 +26,27 @@
           <li><img src="/front/images/uranus.png"alt="Earth"><a href="#"></a><a href="#">Uranus</a></li>
           <li><img src="/front/images/jupiter.png"alt="Earth"><a href="#"></a><a href="#">Jupiter</a></li>
         </ul>
+      </nav>
 
       
-      
+        <div id="response"></div>
+
+        <div id="response"></div>
+<script>
+    fetch('http://localhost:5000/asset/as11-40-5874')
     
-
+  .then(response => response.json())
+  .then(data => 
+  {
+    
+    
+    // do something with the data
+    document.getElementById('output').innerHTML = data;
+  });
+</script>
+        
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
