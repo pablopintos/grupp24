@@ -11,3 +11,14 @@ window.addEventListener('resize', e => {
   // toggle the visibility of the navigation bar on small screens
 });
 
+ function fetchDataNasaImageWithDiscription () {
+  $.ajax({
+    type: "GET",
+    url: "http://localhost:5000/apod",
+    sucess: function(data) {
+    $.each(data, function(index, element) {
+      $("#td-element-" + index).html(element);
+    });
+  }
+});
+ }
