@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+5<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,13 +8,23 @@
     <link rel="stylesheet" href="/front/style.css">
 </head>
 <body>
-    <h1>tjenatjena</h1>
+    
+  <nav class="overhead-nav" id="overheadNavbar">
+  <h1>tjenatjena</h1>
     <ul id="navbar">
         <li class="nav-item">Home</li>
         <li class="nav-item">About</li>
+        <li class= "nav-item">Astronomi of the Day</li>
         <li class="nav-item">Contact Us</li>
-    </ul>
-    <nav>
+    
+        <div id="search-container">
+          <input type="text" id="search-input" placeholder="search here">
+          <button type="button" id="search-button">Search</button>
+        </div>
+      </ul>
+   </nav>
+   
+    <nav class="planet-nav" id="planetNavbar">
         <ul>
           <li><a href="#">Sun</a></li>
           <li><a href="#">Mercury</a></li>
@@ -28,8 +38,24 @@
         </ul>
       </nav>
       
-    
+      <section id="main-event">
+      <table class="table" id="imageAndTextTable">
+          <tr>
+              <td style="vertical-align: middle; text-align: left;" id="Image">
+                <!--Image from endpoint goes here-->
+                
+              </td>
 
+              <td style="vertical-align: middle; text-align: right;" id="description">
+                <!--text from endpoint goes here-->
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare ultricies tellus, non malesuada elit condimentum id. Pellentesque nec turpis orci. Nullam dictum, quam non dictum facilisis, diam nisi dignissim justo, quis dictum massa tortor a diam. Vivamus tincidunt leo quis metus tristique, id tempus nisi fringilla.</p>
+              </td>
+          </tr>
+      </table>
+
+     
+
+    </section>
     <script src="script.js"></script>
 </body>
 </html>
