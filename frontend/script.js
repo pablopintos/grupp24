@@ -37,3 +37,10 @@ async function searchByName(searchKey){
     });  
   })
 }
+
+ searchBtn = document.getElementById("nav-item-search-astro");
+ searchBtn.addEventListener("click", function() {
+  window.location = "second-page.html";
+});
+
+

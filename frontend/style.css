@@ -7,17 +7,7 @@ body {
   max-width: 100%;
   height: auto;
 }
-#navbar {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 0 20px;
-    background-size: cover; /* Scale the image to cover the entire navigation bar */
-    background-position: center; 
-  
-  }
+
 .icons{
     width: 25px;
     height:25px;
@@ -34,9 +24,7 @@ body {
   
 
   
-  nav {
-    width: 250px; /* Set the width of the navigation bar */
-  }
+  
   
   ul {
     list-style: none; /* Remove the default bullet points from the list */
@@ -85,7 +73,7 @@ p  {
     border-radius: 4px;
     padding: 0 12px;
     font-size: 16px;
-    
+    margin-block: 80px;
   }
   
   #search-button {
@@ -96,6 +84,7 @@ p  {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin-block: 80px;
   }
   
   #search-button:hover {
@@ -176,4 +165,24 @@ p  {
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
+  }
+
+  
+
+#nav {
+    display: flex;
+    justify-content: space-between; /* center the links in the navbar horizontally*/
+    align-items: center; /* align the links vertically in the middle*/
+    background-image: url('./images/space.jpeg');
+    
+  }
+
+div > button{
+    background-color: blue;
+    color: rgb(255, 255, 255);
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
   }
