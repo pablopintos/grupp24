@@ -4,31 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpaceSearch</title>
+    <title id="title-of-secound-site"></title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Seymour+One&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 </head>
-
-  
+<body style="background-color: #333;">
+    
   <div id="nav">
-      <button><a href="index.html" > Home </a></button>
-      <button><a href="searched-content.html" > Search astronomi </a></button>
-      <button><a href="index.html" > About </a></button>
-      <button><a href="searched-content.html" > Contact us </a></button>
-    </div>
+    <button><a href="index.html" > Home </a></button>
+    <button><a href="searched-content.html" > Search astronomi </a></button>
+    <button><a href="index.html" > About </a></button>
+    <button><a href="searched-content.html" > Contact us </a></button>
+  </div>
       
-     <!--
     </ul>
     <div id="search-container">
       <input type="text" id="search-input" placeholder="search here">
       <button type="button" id="search-button">Search</button>
     </div>
---> 
-  
-  <!--
-  <div id="content">
+
+    <div id="content">
 
       <nav>
         <ul>
@@ -74,16 +71,14 @@
               </div>
         </ul>
       </nav>
-      -->
-
-      <div id="tableContainerApod">
-        <table id="apodTable">
+      
+      <div id="tableContainer">
+        <table id="imgTable">
           <tr>
+            <th scope="col" style="width: 40px">No</th>
             <th scope="col" style="width: 40px">Title</th>
-            <th scope="col" style="width: 40px">image</th>
-            <th scope="col" style="width: 40px">Description</th>
-            <th scope="col" style="width: 50px">auther</th>
-            <th scope="col" style="width: 50px">date</th>
+            <th scope="col">image</th>
+            <th scope="col" style="width: 100px">Description</th>
           </tr>
         </table>
       </div>
