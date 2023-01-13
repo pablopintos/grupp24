@@ -1,6 +1,7 @@
 
 const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-button");
+const planetBtn = document.getElementById("");
 
 
 searchBtn.addEventListener("click", () => {
@@ -14,6 +15,7 @@ document.querySelectorAll('.suggestion').forEach(item => {
     //handle click
     console.log(event.target);
     searchInput.value = event.target.innerHTML.trim();
+    searchBtn.click();
   })
 })
 
