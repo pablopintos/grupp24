@@ -14,6 +14,13 @@ searchInput.addEventListener("keyup", function(event) {
   }
 });
 
+searchInput.addEventListener("keydown", event => {
+  if (event.keyCode === 13) {
+    const searchKey = searchInput.value;
+    searchByName(searchKey);
+  }
+});
+  
 
 document.querySelectorAll('.suggestion').forEach(item => {
   item.addEventListener('click', event => {
