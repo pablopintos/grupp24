@@ -2,6 +2,10 @@
 const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-button");
 const planetBtn = document.getElementById("");
+let items = null;
+let img = null;
+let title = null;
+let desc = null;
 
 
 searchBtn.addEventListener("click", () => {
@@ -23,12 +27,30 @@ document.querySelectorAll('.suggestion').forEach(item => {
 async function searchByName(searchKey){
   await fetch(`http://localhost:8080/nasa/search/${searchKey}`, {method: 'GET'})
   .then(res => res.json()).then(res => {
-    const items = res.collection.items;
+
+    if (items || img || title || desc){
+      items = null;
+      items.slice(0,5).forEach((item, index) => {
+        img = null;
+        title = null;
+        desc = null;
+        jQuery("#imgTable tr:last").after(`<tr>
+        <td>${index+1}</td>
+        <td>${title}</td>  
+        <td><img src=${img}></td>  
+        <td>${desc}</td>  
+        </tr>"
+      `);
+      });
+    }
+
+    items = res.collection.items;
     console.log(items);
-    items.forEach((item, index) => {
-      const img = item.links[0].href;
-      const title = item.data[0].title
-      const desc = item.data[0].description;
+  //  for(let nr =0; nr < items-length; nr++)
+    items.slice(0,5).forEach((item, index) => {
+      img = item.links[0].href;
+      title = item.data[0].title
+      desc = item.data[0].description;
       jQuery("#imgTable tr:last").after(`<tr>
       <td>${index+1}</td>
       <td>${title}</td>  
