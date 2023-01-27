@@ -8,6 +8,12 @@ searchBtn.addEventListener("click", () => {
   searchByName(searchKey);
 });
 
+searchInput.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    searchByName(searchInput.value);
+  }
+});
+
 
 document.querySelectorAll('.suggestion').forEach(item => {
   item.addEventListener('click', event => {
@@ -41,18 +47,5 @@ async function searchByName(searchKey){
  
 
  
- searchKey = Document.querySelector('title-of-secound-site').innerHTML; 
-
-
-
-async function getApod() {
-  await fetch (`http://localhost:8080/nasa/apod`, {method: 'GET'})
-  .then (response => response.json())
-  .then(data => {
-    // Do something with the data
-    console.log(data);
-    
-  })
-}
 
 
