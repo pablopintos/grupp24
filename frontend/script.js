@@ -27,13 +27,14 @@ document.querySelectorAll('.suggestion').forEach(item => {
 async function searchByName(searchKey){
   await fetch(`http://localhost:8080/nasa/search/${searchKey}`, {method: 'GET'})
   .then(res => res.json()).then(res => {
-    const items = res.collection.items;
+    const items = res.collection.items.slice(0, 10);
     console.log(items);
+    jQuery("#imgTable").empty();
     items.forEach((item, index) => {
       const img = item.links[0].href;
       const title = item.data[0].title
       const desc = item.data[0].description;
-      jQuery("#imgTable tr:last").after(`<tr>
+      jQuery("#imgTable").append(`<tr>
       <td>${index+1}</td>
       <td>${title}</td>  
       <td><img src=${img}></td>  
@@ -43,8 +44,6 @@ async function searchByName(searchKey){
     });  
   })
 }
-
- 
 
  
 
