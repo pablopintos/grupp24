@@ -1,10 +1,10 @@
 
-const searchInput = document.getElementById("search-input");
-const searchBtn = document.getElementById("search-button");
+let searchInput = document.getElementById("search-input");
+let searchBtn = document.getElementById("search-button");
 
 
 searchBtn.addEventListener("click", () => {
-  const searchKey = searchInput.value;
+  let searchKey = searchInput.value;
   searchByName(searchKey);
 });
 
