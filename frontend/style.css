@@ -27,7 +27,7 @@ body {
   
   
   
-  ul {
+  nav > ul {
     list-style: none; /* Remove the default bullet points from the list */
     color: white;
     width:200px;
@@ -201,3 +201,4 @@ div > button{
     cursor: pointer;
     display: block;
   }
+    
