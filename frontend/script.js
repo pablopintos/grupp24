@@ -1,3 +1,13 @@
+
+const searchInput = document.getElementById("search-input");
+const searchBtn = document.getElementById("search-button");
+
+
+searchBtn.addEventListener("click", () => {
+  const searchKey = searchInput.value;
+  searchByName(searchKey);
+});
+
 const APIController = (function() {
     
   const clientId = '38d9e5c35e734857b7e0f633c1fafd99';
@@ -184,7 +194,7 @@ const UIController = (function() {
 const APPController = (function(UICtrl, APICtrl) {
 
   // get input field object ref
-  const DOMInputs = UICtrl.inputField();
+    searchKey = UICtrl.inputField();
 
   // get genres on page load
   const loadGenres = async () => {
@@ -199,7 +209,7 @@ const APPController = (function(UICtrl, APICtrl) {
   }
 
   // create genre change event listener
-  DOMInputs.genre.addEventListener('change', async () => {
+  searchKey.genre.addEventListener('change', async () => {
       //reset the playlist
       UICtrl.resetPlaylist();
       //get the token that's stored on the page
@@ -216,7 +226,7 @@ const APPController = (function(UICtrl, APICtrl) {
    
 
   // create submit button click event listener
-  DOMInputs.submit.addEventListener('click', async (e) => {
+  searchKey.submit.addEventListener('click', async (e) => {
       // prevent page reset
       e.preventDefault();
       // clear tracks
@@ -235,7 +245,7 @@ const APPController = (function(UICtrl, APICtrl) {
   });
 
   // create song selection click event listener
-  DOMInputs.tracks.addEventListener('click', async (e) => {
+  searchKey.tracks.addEventListener('click', async (e) => {
       // prevent page reset
       e.preventDefault();
       UICtrl.resetTrackDetail();
@@ -266,14 +276,7 @@ APPController.init();
 
 
 
-const searchInput = document.getElementById("search-input");
-const searchBtn = document.getElementById("search-button");
 
-
-searchBtn.addEventListener("click", () => {
-  const searchKey = searchInput.value;
-  searchByName(searchKey);
-});
 
 searchInput.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
