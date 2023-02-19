@@ -12,7 +12,7 @@ var request = require('request'); // "Request" library
 var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
-
+var SpotifyWebApi = require('spotify-web-api-node')
 var client_id = '38d9e5c35e734857b7e0f633c1fafd99'; // Your client id
 var client_secret = 'c3b46ed9a4f04ea2951bbdc0ed54b6f7'; // Your secret
 var redirect_uri = 'http://127.0.0.1:5500/frontend/searched-content.html'; // Your redirect uri
@@ -143,5 +143,5 @@ app.get('/refresh_token', function(req, res) {
   });
 });
 
-console.log('Listening on 5500');
-app.listen(5500);
+console.log('Listening on 8888');
+app.listen(8888);
