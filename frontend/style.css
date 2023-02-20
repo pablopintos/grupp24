@@ -22,7 +22,13 @@ body {
     cursor: pointer;
     transition: all 0.3s;
   }
-  
+  #login {
+    display: none;
+  }
+
+  #loggedin {
+    display: none;
+  }
 
   
   
