@@ -23,6 +23,10 @@
       <input type="text" id="search-input" placeholder="search here">
       <button type="button" id="search-button">Search</button>
     </div>
+    <div id="search-container">
+      <input type="text" id="search-song" placeholder="search here">
+      <button type="button" id="search-button-song">Search</button>
+    </div>
 
     <div id="content">
 
@@ -82,21 +86,14 @@
         </table>
       </div>
     </div>
-    <div>
-      <div id="login">
-       <h1>First, log in to spotify</h1>
-       <a href="https://accounts.spotify.com/authorize">Log in</a>
-      </div>
-      <div id="loggedin">
-      </div>
-   </div>
+ 
+    <input type="text" id="search-input" placeholder="Search for an artist or track...">
+
 
   <div class="container">
-    <h1>Displaying User Data</h1>
     <p>Log in with your Spotify account and this demo will display information about you fetched using the Spotify Web API</p>
-    <button class="btn btn-primary" id="btn-login">Login</button>
     <input type = "button" onclick = "login()" value = "Logga in">  
-
+    <a href="https://www.spotify.com/logout/">Logga ut</a>
     <div id="result"></div>
 </div>
   <script id="result-template" type="text/x-handlebars-template">

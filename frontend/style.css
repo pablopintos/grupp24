@@ -65,7 +65,7 @@ p  {
     justify-content: center;
   }
   
-  #search-input {
+  #search-input, #search-song {
     width: 40%;
     height: 40px;
     border: 1px solid #ccc;
@@ -75,7 +75,7 @@ p  {
     margin-block: 80px;
   }
   
-  #search-button {
+  #search-button, #search-button-song{
     width: 10%;
     height: 40px;
     background-color: rgb(59, 59, 74);

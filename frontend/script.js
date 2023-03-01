@@ -7,6 +7,7 @@ searchBtn.addEventListener("click", () => {
   let searchKey = searchInput.value;
   searchByName(searchKey);
 });
+
 searchInput.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
     searchByName(searchInput.value);
@@ -20,7 +21,14 @@ searchInput.addEventListener("keydown", event => {
   }
 });
   
-
+function login(){
+  let scope = 'user-follow-read';
+  let clientID = '38d9e5c35e734857b7e0f633c1fafd99';
+  let redirect_uir = 'http://127.0.0.1:5500/frontend/searched-content.html';
+  let response_type = 'token';
+  
+  window.location.href = `https://accounts.spotify.com/authorize?client_id=${clientID}&redirect_uri=${redirect_uir}&response_type=${response_type}&scope=${scope}`;
+}
 document.querySelectorAll('.suggestion').forEach(item => {
   item.addEventListener('click', event => {
     //handle click
@@ -58,7 +66,5 @@ async function searchByName(searchKey){
 
 }
 
-
- 
 
 
