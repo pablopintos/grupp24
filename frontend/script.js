@@ -1,6 +1,6 @@
 
-let searchInput = document.getElementById("search-input");
-let searchBtn = document.getElementById("search-button");
+const searchInput = document.getElementById("search-input");
+const searchBtn = document.getElementById("search-button");
 
 
 searchBtn.addEventListener("click", () => {
@@ -37,7 +37,7 @@ $("#search-input").keypress(function(event) {
 });
 
 async function searchByName(searchKey){
-  await fetch(`http://localhost:8080/nasa/search/${searchKey}`, {method: 'GET'})
+  await fetch(`http://localhost:8080/search/${searchKey}`, {method: 'GET'})
   .then(res => res.json()).then(res => {
     const items = res.collection.items.slice(0, 10);
     console.log(items);

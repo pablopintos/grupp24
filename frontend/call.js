@@ -1,4 +1,4 @@
-const clientId = '38d9e5c35e734857b7e0f633c1fafd99';
+/*const clientId = '38d9e5c35e734857b7e0f633c1fafd99';
 const redirectUri = 'http://127.0.0.1:5500/frontend/searched-content.html';
 const scope = 'playlist-modify-public';
 
@@ -64,4 +64,3 @@ function createPlaylist(token, searchQuery) {
     });
   });
 }
-
