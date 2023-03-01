@@ -7,23 +7,46 @@
     <title id="title-of-secound-site"></title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Seymour+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,500;0,900;1,300;1,400;1,800;1,900&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 </head>
 
-    
-  <div id="nav">
-    <button><a href="index.html" > Home </a></button>
-    <button><a href="searched-content.html" > Search astronomi </a></button>
-    <button><a href="index.html" > About </a></button>
+<body> 
+  <div class="topnav">
+    <a href="#home.html">Home</a>
+    <a href="#AboutUs">About us</a>
+    <a href="#contactUs">Contact us </a>
   </div>
       
-    </ul>
-    <div id="search-container">
-      <input type="text" id="search-input" placeholder="search here">
-      <button type="button" id="search-button">Search</button>
+    
+    <div class="welcome" style="position: relative; left: 550px; top: 50px;">
+      <p id="welcome-text">
+        Welcome to search Space, the number one searchengine for anything astronomi.<br>
+        Search enything in the searchbar and recive images and description
+      </p>
     </div>
 
+    <div class="search-container">
+      <form action="" class="search-bar">
+        <input type="text" placeholder="search anything" name="q" id="search-input">
+        <button type="submit" id="search-button"><img src="images/search.png"></button>
+      </form>
+    </div>
+    
+    <div class="table" id="tableContainer">
+        <table id="imgTable">
+          <tr>
+            <th scope="col" style="width: 40px">Nummer</th>
+            <th scope="col" style="width: 40px">Titel</th>
+            <th scope="col">Bild</th>
+            <th scope="col" style="width: 100px">Beskrivning</th>
+          </tr>
+        </table>
+      </div>
+    <!--
     <div id="content">
 
       <nav>
@@ -102,7 +125,9 @@
           </tr>
         </table>
       </div>
-    </div>
+    -->
+  
+  
     <script src="script.js" type="text/javascript"></script>
 </body>
 </html>
