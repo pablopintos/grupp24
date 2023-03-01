@@ -22,17 +22,7 @@ body {
     cursor: pointer;
     transition: all 0.3s;
   }
-  #login {
-    display: none;
-  }
 
-  #loggedin {
-    display: none;
-  }
-
-  
-  
-  
   nav > ul {
     list-style: none; /* Remove the default bullet points from the list */
     color: white;
