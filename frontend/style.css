@@ -199,12 +199,13 @@ div > button{
   
     #apodTable {
       width: 80%;
-      background: #eee;
+      background:transparent;
       padding: 1rem;
       text-align: center;
       margin-top: 2%;
       margin-left: auto;
       margin-right: auto;
+      color: white;
     }
     #apodTable tbody {
       text-align: center;

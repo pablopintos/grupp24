@@ -18,7 +18,12 @@ document.querySelectorAll('.suggestion').forEach(item => {
     searchBtn.click();
   })
 })
-
+$("#search-input").keypress(function(event) {
+  if (event.which == 13) {
+    $("#search-button").click();
+    event.preventDefault();
+  }
+});
 
 async function searchByName(searchKey){
   await fetch(`http://localhost:8080/nasa/search/${searchKey}`, {method: 'GET'})
