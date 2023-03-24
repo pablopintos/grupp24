@@ -6,7 +6,6 @@ const searchBtn = document.getElementById("search-button");
 searchBtn.addEventListener("click", () => {
   let searchKey = searchInput.value;
   searchByName(searchKey);
-  searchByTrack(searchKey);
 });
 
 searchInput.addEventListener("keyup", function(event) {
@@ -87,7 +86,7 @@ const JS_headers = new Headers({
 });
 
 async function searchByTrack(searchKey){
-  
+
   const settings = {
     method: 'GET',
     headers: JS_headers
