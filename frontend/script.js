@@ -81,7 +81,7 @@ async function searchByTrack(searchKey){
   const tokenSettings = {
     method: 'GET'
   };
-  
+  ////////// ta ej bort nedstående funktion
   var token = await fetch(`http://localhost:8080/token`, tokenSettings)
   .then(res => res.json()).then(res => {
     let fetchedToken = res['access_token'];
