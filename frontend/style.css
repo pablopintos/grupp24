@@ -93,28 +93,6 @@ p  {
     background-color: #006305;
   }
 
-  #dagens {
-    width: 100%;
-  border: 1px solid rgb(255, 255, 255);
-  }
-
-
-  #field {
-    background-color: #ccc;
-    width:200px;
-    height:200px;
-  }
-
-  #AstronomiDag {
-    position: relative;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    width: 1200px;
-    height: 600px;
-    background-color: rgb(99, 100, 100);
-  }
 
   #content{
     display: flex;
