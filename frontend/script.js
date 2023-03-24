@@ -33,11 +33,11 @@ async function getToken(){
 function login(){
   let scope = 'user-follow-read';
   let clientID = '38d9e5c35e734857b7e0f633c1fafd99';
-  let redirect_uir = 'http://127.0.0.1:5500/frontend/searched-content.html';
+  let redirect_uri = 'http://127.0.0.1:5500/frontend/searched-content.html';
   response_type = 'token';
   getToken;
   
-  window.location.href = `https://accounts.spotify.com/authorize?client_id=${clientID}&redirect_uri=${redirect_uir}&response_type=${response_type}&scope=${scope}`;
+  window.location.href = `https://accounts.spotify.com/authorize?client_id=${clientID}&redirect_uri=${redirect_uri}&response_type=${response_type}&scope=${scope}`;
 }
 document.querySelectorAll('.suggestion').forEach(item => {
   item.addEventListener('click', event => {
@@ -76,10 +76,10 @@ async function searchByName(searchKey){
 
 }
 
-let tokenV = 'BQCSqfLanDBlOCiz3yg-qGdfYlAZXt569VxImTjR9zVYfVV3cWYZk76IJBpxPOZ5Xc96ttO46J0dlGtwVkJOpZGuHIShwBJJfl-GSowTPxvltXWXRNEYP9_TMVVSmrCeeh_XGzEU2Uaspw-7finf3lDdb4Tn90cEhK0zthwuWNUPN89b8cz74uowSWxeY0bdwQ4J';
+let tokenV = 'BQDE3mytsUoxaeu9MrbaQek_57PRyehweGSMdUIZ5gqnNT1bmmz-dDqnalDQMZSGQgYgSpWoyWMPBCOV70M1-7EO-DQM-6MMsXzOIoX6WEaza1DeFQrc2MId69X9iCorOlpcL88uZNiq5LoaxoBACa-zWRzMpvh4gL1Qx2kxCnpenF2CoGBzew';
 const JS_headers = new Headers({
   'Accept': 'application/json',
-  'Authorization': 'Bearer ' + accessToken
+  'Authorization': 'Bearer ' + tokenV
 });
 
 async function searchByTrack(searchKey){
@@ -95,5 +95,20 @@ async function searchByTrack(searchKey){
   console.log("------------")
 
 
+}
+
+const tracksDiv = document.getElementById("tracks");
+async function trackbyName(searchKey){
+  await fetch(`http://localhost:8080/track/${searchKey}`)
+  .then(response => response.json())
+  .then(data => {
+    const tracks = response.tracks.items;
+    tracks.forEach(track => {
+      const trackName = document.createElement("p");
+      trackName.textContent = track.name;
+      tracksDiv.appendChild(trackName);
+    });
+  })
+  .catch(error => console.error(error));
 }
 

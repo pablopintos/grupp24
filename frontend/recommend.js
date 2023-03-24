@@ -1,6 +1,5 @@
 const searchInput2 = document.getElementById("search-song");
 const searchBtn2 = document.getElementById("search-button-song");
-const accessToken = window.localStorage.getItem('access_token');
 
 searchBtn2.addEventListener("click", () => {
     let searchKey2 = searchInput2.value;
@@ -44,27 +43,4 @@ async function getToken(){
       console.error('Error retrieving track information:', error);
     })};
 
-    async function searchByName(searchKey2){
-        await fetch(`http://localhost:8080/track/${searchKey2}`, {
-            headers: {
-              'Authorization': `Bearer ${accessToken}`}
-          })
-        .then(res => res.json()).then(res => {
-          const items = res.tracks.albums.artists.slice(0, 10);
-          console.log(items);
-          jQuery("#imgTable2").empty();
-          items.forEach((item, index) => {
-            const img = item.links[0].album;
-            const title = item.data[0].title
-            const desc = item.data[0].description;
-            jQuery("#imgTable2").append(`<tr>
-            <td>${index+1}</td>
-            <td>${title}</td>  
-            <td><img src=${img}></td>  
-            <td>${desc}</td>  
-            </tr>"
-          `);
-          });  
-        })
-      }
 
