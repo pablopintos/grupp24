@@ -1,23 +1,16 @@
-
 const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-button");
-
 
 searchBtn.addEventListener("click", () => {
   let searchKey = searchInput.value;
   searchByName(searchKey);
 });
 
-searchInput.addEventListener("keyup", function(event) {
-  if (event.keyCode === 13) {
-    searchByName(searchInput.value);
-  }
-});
 
 searchInput.addEventListener("keydown", event => {
   if (event.keyCode === 13) {
-    const searchKey = searchInput.value;
-    searchByName(searchKey);
+    const searchKey2 = searchInput.value;
+    searchByName(searchKey2);
   }
 });
   
@@ -37,12 +30,7 @@ document.querySelectorAll('.suggestion').forEach(item => {
     searchBtn.click();
   })
 })
-$("#search-input").keypress(function(event) {
-  if (event.which == 13) {
-    $("#search-button").click();
-    event.preventDefault();
-  }
-});
+
 
 async function searchByName(searchKey){
   await fetch(`http://localhost:8080/search/${searchKey}`, {method: 'GET'})
@@ -63,8 +51,5 @@ async function searchByName(searchKey){
     `);
     });  
   })
-
 }
-
-
 

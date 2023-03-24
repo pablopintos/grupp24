@@ -60,7 +60,7 @@ p  {
     border-radius: 1px;
   }
   
-  #search-container {
+  #search-container, #search-container2 {
     position: relative;
     z-index: 3;
     display: flex;
