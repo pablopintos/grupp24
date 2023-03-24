@@ -11,9 +11,12 @@ searchBtn.addEventListener("click", () => {
 
 searchInput.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
-    searchByName(searchInput.value);
+    let searchKey = searchInput.value;
+    searchByName(searchKey);
+    searchByTrack(searchKey);
   }
 });
+
 
 searchInput.addEventListener("keydown", event => {
   if (event.keyCode === 13) {
@@ -91,25 +94,13 @@ async function searchByTrack(searchKey){
 
   const fetchResponse = await fetch(`http://localhost:8080/track/${searchKey}`, settings);
   const data = await fetchResponse.json();
-  console.log("------------")
-  console.log(data)
-  console.log("------------")
 
-
+  const tracksDiv = document.getElementById("tracks");
+  tracksDiv.innerHTML = "";
+  const tracks = data.tracks.items;
+  tracks.forEach(track => {
+    const trackName = document.createElement("p");
+    trackName.textContent = track.name;
+    tracksDiv.appendChild(trackName);
+  });
 }
-
-const tracksDiv = document.getElementById("tracks");
-async function trackbyName(searchKey){
-  await fetch(`http://localhost:8080/track/${searchKey}`)
-  .then(response => response.json())
-  .then(data => {
-    const tracks = response.tracks.items;
-    tracks.forEach(track => {
-      const trackName = document.createElement("p");
-      trackName.textContent = track.name;
-      tracksDiv.appendChild(trackName);
-    });
-  })
-  .catch(error => console.error(error));
-}
-
