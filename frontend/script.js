@@ -95,12 +95,18 @@ async function searchByTrack(searchKey){
   const fetchResponse = await fetch(`http://localhost:8080/track/${searchKey}`, settings);
   const data = await fetchResponse.json();
 
-  const tracksDiv = document.getElementById("tracks");
-  tracksDiv.innerHTML = "";
+  const tracksTable = document.getElementById("imgTable2");
+  tracksTable.innerHTML = "";
   const tracks = data.tracks.items;
-  tracks.forEach(track => {
-    const trackName = document.createElement("p");
-    trackName.textContent = track.name;
-    tracksDiv.appendChild(trackName);
+  tracks.forEach((track, index) => {
+    const img = track.album.images[0].url;
+    const title = track.name;
+    const desc = track.album.name;
+    tracksTable.insertRow().innerHTML = `
+      <td>${index+1}</td>
+      <td>${title}</td>  
+      <td><img src=${img}></td>  
+      <td>${desc}</td>  
+    `;
   });
 }
