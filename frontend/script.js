@@ -2,6 +2,10 @@
 const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-button");
 
+const clientID = '38d9e5c35e734857b7e0f633c1fafd99';
+const clientSecret = 'c3b46ed9a4f04ea2951bbdc0ed54b6f7';
+const redirect_uri = 'http://127.0.0.1:5500/frontend/searched-content.html';
+
 
 searchBtn.addEventListener("click", () => {
   let searchKey = searchInput.value;
@@ -86,21 +90,22 @@ async function searchByTrack(searchKey){
 
   console.log("ACCESS TOKEN, BABY: " + token);
   
-  const JS_headers = new Headers({
-    'Accept': 'application/json',
+const JS_headers = new Headers({
+  'Accept': 'application/json',
     'Authorization': token
-  });
+});
+
 
   const settings = {
     method: 'GET',
     headers: JS_headers
-  };
+  }
 
   try {
-    const fetchResponse = await fetch(`http://localhost:8080/track/${searchKey}`, settings);
+  const fetchResponse = await fetch(`http://localhost:8080/track/${searchKey}`, settings);
     let data = await fetchResponse.json();
     console.log(data);
   } catch (e) {
     return e;
-  }
+}
 }
