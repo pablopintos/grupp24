@@ -2,6 +2,10 @@ const accessToken = window.localStorage.getItem('access_token');
 const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-button");
 
+const clientID = '38d9e5c35e734857b7e0f633c1fafd99';
+const clientSecret = 'c3b46ed9a4f04ea2951bbdc0ed54b6f7';
+const redirect_uri = 'http://127.0.0.1:5500/frontend/searched-content.html';
+
 
 searchBtn.addEventListener("click", () => {
   let searchKey = searchInput.value;
@@ -25,6 +29,9 @@ searchInput.addEventListener("keydown", event => {
   }
 });
 
+function login(){  
+  console.log("LOGGING IN ...")
+
 let response_type = '';
 
 async function getToken(){
@@ -36,6 +43,9 @@ async function getToken(){
 
 function login(){
   let scope = 'user-follow-read';
+  let redirect_uri = 'http://127.0.0.1:5500/frontend/searched-content.html';
+  let response_type = 'token';
+  window.location.href = `https://accounts.spotify.com/authorize?client_id=${clientID}&redirect_uri=${redirect_uri}&response_type=${response_type}&scope=${scope}`;
   let clientID = '38d9e5c35e734857b7e0f633c1fafd99';
   let redirect_uri = 'http://127.0.0.1:5500/frontend/searched-content.html';
   response_type = 'token';
