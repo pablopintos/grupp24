@@ -9,9 +9,10 @@ body {
   color:#fff
 }
 #container {
-align-items: center;
-align-content: center;
-}
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
 .icons{
     width: 25px;
     height:25px;
@@ -27,40 +28,40 @@ align-content: center;
   }
 
   nav > ul {
-    list-style: none; /* Remove the default bullet points from the list */
+    list-style: none; 
     color: white;
     width:200px;
   }
   
   li {
-    margin-bottom: 30px; /* Add some space between the menu items */
+    margin-bottom: 30px; 
     font-family: 'Seymour One', sans-serif;
     font-size: x-large;
 
   }
   
   a {
-    display: block; /* Make the links block-level elements to fill the entire width of the list item */
-    text-decoration: none; /* Remove the default underline from the links */
+    display: block; 
+    text-decoration: none;
     color: #fff;
     font-family: 'Seymour One', sans-serif;
 
   }
   
 p  {
-  display: block; /* Make the links block-level elements to fill the entire width of the list item */
-  padding: 10px; /* Add some padding to the links */
-  text-decoration: none; /* Remove the default underline from the links */
+  display: block; 
+  padding: 10px; 
+  text-decoration: none; 
   color: #fff;
   font-family: 'Seymour One', sans-serif;
 
 }
   a:hover, li:hover {
-    background-color: rgb(110, 95, 95); /* Change the background color of the links when hovered over */
+    background-color: rgb(110, 95, 95); 
     border-radius: 1px;
   }
   
-  #search-container {
+  #search-container{
     position: relative;
     z-index: 3;
     display: flex;
@@ -68,7 +69,7 @@ p  {
     justify-content: center;
   }
   
-  #search-input, #search-song {
+  #search-input{
     width: 40%;
     height: 40px;
     border: 1px solid #ccc;
@@ -78,7 +79,7 @@ p  {
     margin-block: 80px;
   }
   
-  #search-button, #search-button-song{
+  #search-button {
     width: 10%;
     height: 40px;
     background-color: rgb(59, 59, 74);
@@ -93,28 +94,6 @@ p  {
     background-color: #006305;
   }
 
-  #dagens {
-    width: 100%;
-  border: 1px solid rgb(255, 255, 255);
-  }
-
-
-  #field {
-    background-color: #ccc;
-    width:200px;
-    height:200px;
-  }
-
-  #AstronomiDag {
-    position: relative;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    width: 1200px;
-    height: 600px;
-    background-color: rgb(99, 100, 100);
-  }
 
   #content{
     display: flex;
@@ -130,7 +109,7 @@ p  {
 }
 
 
-  #imgTable {
+  #imgTable, #imgTable2 {
     width: 400px;
     background: #fff;
     padding: 1rem;
@@ -140,14 +119,14 @@ p  {
     border-radius: 10px;
 
   }
-  #imgTable tbody {
+  #imgTable tbody, #imgTable2 tbody {
     text-align: center;
     margin-top: 2%;
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
   }
-  #imgTable th {
+  #imgTable th, #imgTable2 th {
     border-bottom: 1px solid gray;
     width: 50%;
     height: 50%;
@@ -156,13 +135,13 @@ p  {
     color:black
   }
 
-  #imgTable img {
+  #imgTable img, #imgTable2 img {
 width:100px;
 height:100px;
 border-radius: 5px;
   }
 
-  #imgTable td {
+  #imgTable td, #imgTable2 td {
     border-bottom: 1px solid rgb(114, 94, 94);
     width:50%;
     color:black
