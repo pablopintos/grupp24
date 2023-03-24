@@ -80,11 +80,7 @@ async function searchByName(searchKey){
 
 }
 
-<<<<<<< Updated upstream
 let tokenV = 'BQDEsPTTTN6nRFENn3_pn-cQx-OqlAZy4D1qkgO5nT_Ac5wNM_hbGfxtTa4xSAmANlk4L1cM_fQUFpFDT-S9hURAs85R_8dLBWAGRVFWZwEJQz75D_s4AY1spNXzMAOMIKPfVUepmudYxIavFXSX0L23w3Xa5CoBPwKHw0TWepcNI3Ra22NiUA';
-=======
-let tokenV = 'BQByBbyRZ3uM2y-0Sbiih0RiHskvIoOTgwKG1UrNpvGDAm3P-3O_eUoqaeqc7RCk5MK-GPawpyiG8Iagjqxz3QvUzt37dxNgIPpGtruhpFUf10PDaaZenoick6BxfZEKqcYbgJs5uinZvQI1hjjocJhezrvT1RWVepnLGR2XdXW_RPGE6bbsSg';
->>>>>>> Stashed changes
 const JS_headers = new Headers({
   'Accept': 'application/json',
   'Authorization': 'Bearer ' + tokenV
