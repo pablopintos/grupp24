@@ -8,7 +8,10 @@ body {
   height: auto;
   color:#fff
 }
-
+#container {
+align-items: center;
+align-content: center;
+}
 .icons{
     width: 25px;
     height:25px;
