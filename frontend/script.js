@@ -1,4 +1,4 @@
-const accessToken = window.localStorage.getItem('access_token');
+
 const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-button");
 
@@ -25,24 +25,15 @@ searchInput.addEventListener("keydown", event => {
   }
 });
 
-let response_type = '';
-
-async function getToken(){
-  // Funktionen hämtar spotifys token och sparar denna lokalt i webbläsaren.
-  let params = (new URL(location.href.replace('#','?'))).searchParams;
-  let token = params.get('access_token');
-  window.localStorage.setItem('access_token',token)   
-}  
-
 function login(){
+  console.log("LOGGING IN ...")
   let scope = 'user-follow-read';
   let clientID = '38d9e5c35e734857b7e0f633c1fafd99';
   let redirect_uri = 'http://127.0.0.1:5500/frontend/searched-content.html';
-  response_type = 'token';
-  getToken
-  
+  let response_type = 'token';
   window.location.href = `https://accounts.spotify.com/authorize?client_id=${clientID}&redirect_uri=${redirect_uri}&response_type=${response_type}&scope=${scope}`;
 }
+
 document.querySelectorAll('.suggestion').forEach(item => {
   item.addEventListener('click', event => {
     //handle click
@@ -80,33 +71,36 @@ async function searchByName(searchKey){
 
 }
 
-let tokenV = 'BQDEsPTTTN6nRFENn3_pn-cQx-OqlAZy4D1qkgO5nT_Ac5wNM_hbGfxtTa4xSAmANlk4L1cM_fQUFpFDT-S9hURAs85R_8dLBWAGRVFWZwEJQz75D_s4AY1spNXzMAOMIKPfVUepmudYxIavFXSX0L23w3Xa5CoBPwKHw0TWepcNI3Ra22NiUA';
-const JS_headers = new Headers({
-  'Accept': 'application/json',
-  'Authorization': 'Bearer ' + tokenV
-});
 
-async function searchByTrack(searchKey){
+async function searchByTrack(searchKey){  
+  
+  const tokenSettings = {
+    method: 'GET'
+  };
+  
+  var token = await fetch(`http://localhost:8080/token`, tokenSettings)
+  .then(res => res.json()).then(res => {
+    let fetchedToken = res['access_token'];
+    return fetchedToken;
+  })
+
+  console.log("ACCESS TOKEN, BABY: " + token);
+  
+  const JS_headers = new Headers({
+    'Accept': 'application/json',
+    'Authorization': token
+  });
+
   const settings = {
     method: 'GET',
     headers: JS_headers
   };
 
-  const fetchResponse = await fetch(`http://localhost:8080/track/${searchKey}`, settings);
-  const data = await fetchResponse.json();
-
-  const tracksTable = document.getElementById("imgTable2");
-  tracksTable.innerHTML = "";
-  const tracks = data.tracks.items;
-  tracks.forEach((track, index) => {
-    const img = track.album.images[0].url;
-    const title = track.name;
-    const desc = track.album.name;
-    tracksTable.insertRow().innerHTML = `
-      <td>${index+1}</td>
-      <td>${title}</td>  
-      <td><img src=${img}></td>  
-      <td>${desc}</td>  
-    `;
-  });
+  try {
+    const fetchResponse = await fetch(`http://localhost:8080/track/${searchKey}`, settings);
+    let data = await fetchResponse.json();
+    console.log(data);
+  } catch (e) {
+    return e;
+  }
 }
