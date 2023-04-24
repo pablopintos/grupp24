@@ -1,10 +1,5 @@
 body {
-  /* other styles for the body element */
-  background-image: url('./images/space.jpeg'); /* Add the background image */
-  /*background-size: cover; /* Scale the image to cover the entire body element */
-  /*background-position: center; /* Position the image in the center of the body element */
-  /*background-repeat: no-repeat; /* Do not repeat the image */
-  max-width: 100%;
+  background-image: url('./images/space.jpeg');
   height: auto;
   color:#fff
 }
@@ -110,7 +105,7 @@ p  {
 
 
   #imgTable, #imgTable2 {
-    width: 400px;
+    width: 300px;
     background: #fff;
     padding: 1rem;
     text-align: center;

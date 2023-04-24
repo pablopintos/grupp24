@@ -64,7 +64,6 @@ async function searchByName(searchKey){
       const title = item.data[0].title
       const desc = item.data[0].description;
       jQuery("#imgTable").append(`<tr>
-      <th>Sökresultat</th>
       <td>${index+1}</td>
       <td>${title}</td>  
       <td><img src=${img}></td>  
