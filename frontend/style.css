@@ -6,7 +6,12 @@ body {
 #container {
     align-items: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    margin-left:17%
+  }
+  #container, p {
+    width:70%
   }
 .icons{
     width: 25px;
@@ -97,7 +102,7 @@ p  {
 
 
 #tableContainer{
-  width: 100%;
+  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,7 +115,7 @@ p  {
     padding: 1rem;
     text-align: center;
     margin-top: 2%;
-    margin-right: 20%;
+    margin-right: 30%;
     border-radius: 10px;
 
   }
