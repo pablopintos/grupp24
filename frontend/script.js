@@ -13,7 +13,7 @@ searchBtn.addEventListener("click", () => {
   searchByTrack(searchKey);
 });
 
-searchInput.addEventListener("keyup", function(event) {
+searchInput.addEventListener("keyup", function (event) {
   if (event.keyCode === 13) {
     let searchKey = searchInput.value;
     searchByName(searchKey);
@@ -29,7 +29,7 @@ searchInput.addEventListener("keydown", event => {
   }
 });
 
-function login(){
+function login() {
   console.log("LOGGING IN ...")
   let scope = 'user-follow-read';
   let clientID = '38d9e5c35e734857b7e0f633c1fafd99';
@@ -46,54 +46,54 @@ document.querySelectorAll('.suggestion').forEach(item => {
     searchBtn.click();
   })
 })
-$("#search-input").keypress(function(event) {
+$("#search-input").keypress(function (event) {
   if (event.which == 13) {
     $("#search-button").click();
     event.preventDefault();
   }
 });
 
-async function searchByName(searchKey){
-  await fetch(`http://localhost:8080/search/${searchKey}`, {method: 'GET'})
-  .then(res => res.json()).then(res => {
-    const items = res.collection.items.slice(0, 10);
-    console.log(items);
-    jQuery("#imgTable").empty();
-    items.forEach((item, index) => {
-      const img = item.links[0].href;
-      const title = item.data[0].title
-      const desc = item.data[0].description;
-      jQuery("#imgTable").append(`<tr>
-      <td>${index+1}</td>
+async function searchByName(searchKey) {
+  await fetch(`http://localhost:8080/search/${searchKey}`, { method: 'GET' })
+    .then(res => res.json()).then(res => {
+      const items = res.collection.items.slice(0, 10);
+      console.log(items);
+      jQuery("#imgTable").empty();
+      items.forEach((item, index) => {
+        const img = item.links[0].href;
+        const title = item.data[0].title
+        const desc = item.data[0].description;
+        jQuery("#imgTable").append(`<tr>
+      <td>${index + 1}</td>
       <td>${title}</td>  
       <td><img src=${img}></td>  
       <td>${desc}</td>  
       </tr>"
     `);
-    });  
-  })
+      });
+    })
 
 }
 
 
-async function searchByTrack(searchKey){  
+async function searchByTrack(searchKey) {
 
   const tokenSettings = {
     method: 'GET'
   };
   ////////// ta ej bort nedstående funktion
   var token = await fetch(`http://localhost:8080/token`, tokenSettings)
-  .then(res => res.json()).then(res => {
-    let fetchedToken = res['access_token'];
-    return fetchedToken;
-  })
+    .then(res => res.json()).then(res => {
+      let fetchedToken = res['access_token'];
+      return fetchedToken;
+    })
 
   console.log("ACCESS TOKEN, BABY: " + token);
-  
-const JS_headers = new Headers({
-  'Accept': 'application/json',
-    'Authorization': token
-});
+
+  const JS_headers = new Headers({
+    'Accept': 'application/json',
+    'Authorization': 'bearer' + token
+  });
 
 
   const settings = {
@@ -102,7 +102,7 @@ const JS_headers = new Headers({
   }
 
   try {
-  const fetchResponse = await fetch(`http://localhost:8080/track/${searchKey}`, settings);
+    const fetchResponse = await fetch(`http://localhost:8080/track/${searchKey}`, settings);
     let data = await fetchResponse.json();
     console.log(data);
 
@@ -114,7 +114,7 @@ const JS_headers = new Headers({
       const title = track.name;
       const desc = track.album.name;
       tracksTable.insertRow().innerHTML = `
-        <td>${index+1}</td>
+        <td>${index + 1}</td>
         <td>${title}</td>  
         <td><img src=${img}></td>  
         <td>${desc}</td>  
@@ -123,5 +123,21 @@ const JS_headers = new Headers({
 
   } catch (e) {
     return e;
+  }
 }
+
+function populateUI(profile) {
+  document.getElementById("displayName").innerText = profile.display_name;
+  if (profile.images[0]) {
+    const profileImage = new Image(200, 200);
+    profileImage.src = profile.images[0].url;
+    document.getElementById("avatar").appendChild(profileImage);
+    document.getElementById("imgUrl").innerText = profile.images[0].url;
+  }
+  document.getElementById("id").innerText = profile.id;
+  document.getElementById("email").innerText = profile.email;
+  document.getElementById("uri").innerText = profile.uri;
+  document.getElementById("uri").setAttribute("href", profile.external_urls.spotify);
+  document.getElementById("url").innerText = profile.href;
+  document.getElementById("url").setAttribute("href", profile.href);
 }

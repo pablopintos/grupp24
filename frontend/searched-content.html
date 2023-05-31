@@ -1,106 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="title-of-secound-site"></title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Seymour+One&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="title-of-secound-site"></title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Seymour+One&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 </head>
 
-<body> 
+<body>
   <div id="nav">
-    <button><a href="index.html" > Home </a></button>
-    <button><a href="searched-content.html" > Search astronomi </a></button>
-    <button><a href="index.html" > About </a></button>
+    <button><a href="index.html"> Home </a></button>
+    <button><a href="searched-content.html"> Search astronomi </a></button>
+    <button><a href="index.html"> About </a></button>
   </div>
   <div id="container">
     <p>Sök efter din favoritlåt och se vad rymden säger om låten!</p>
-    <p>Logga in med ditt Spotify-konto så kommer den här demon att visa information om dig hämtad med Spotify Web API</p>
-    <input type = "button" onclick = "login()" value = "Logga in">  
+    <p>Logga in med ditt Spotify-konto så kommer den här demon att visa information om dig hämtad med Spotify Web API
+    </p>
+    <input type="button" onclick="login()" value="Logga in">
     <a href="https://www.spotify.com/logout/">Logga ut</a>
     <div id="result"></div>
-</div>
-      
-    </ul>
-    <div id="search-container">
-      <input type="text" id="search-input" placeholder="Sök här ">
-      <button type="button" id="search-button">Search</button>
-    </div>
-    <div id="content">
+  </div>
 
-      <nav>
-        <ul>
-          <div>
-            <img class="icons" src="./images/sun.png" alt="Sun">
-            <li class="suggestion">
-              Sun</li>
-            </div>
-            <div>
-              <img class="icons" src="./images/mercury.png" alt="'Mercury">
-              <li class="suggestion">
-                Mercury</li>
-              </div>
-            <div>
-              <img class="icons" src="./images/venus.png"alt="Venus">
-              <li class="suggestion">
-                Venus</li>
-              </div>
-            <div>
-              <img class="icons" src="./images/planet-earth.png"alt="Earth">
-              <li class="suggestion">
-                Earth</li>
-              </div>
-            <div>
-              <img class="icons" src="./images/mars.png"alt="mars">
-              <li class="suggestion">
-                Mars</li>
-              </div>
-            <div>
-              <img class="icons" src="./images/jupiter.png"alt="Jupiter">
-              <li class="suggestion">
-                Jupiter</li>
-              </div>
-            <div>
-              <img class="icons" src="./images/planet.png"alt="Planet">
-              <li class="suggestion">
-                Planet</li>
-              </div>
-            <div>
-              <img class="icons" src="./images/uranus.png"alt="Uranus">
-              <li class="suggestion">
-                Uranus</li>
-              </div>
-        </ul>
-      </nav>
-   
-      <div id="tableContainer">
-        <table id="imgTable">
-          <tr>
-            <th scope="col" style="width: 40px">Nummer</th>
-            <th scope="col" style="width: 40px">Titel</th>
-            <th scope="col">Bild</th>
-            <th scope="col" style="width: 100px">Beskrivning</th>
-          </tr>
-        </table>
-      </div>
-      <div id="tableContainer">
-        <table id="imgTable2">
-          <tr>
-            <th scope="col" style="width: 40px">Nummer</th>
-            <th scope="col" style="width: 40px">Titel</th>
-            <th scope="col">Bild</th>
-            <th scope="col" style="width: 100px">Beskrivning</th>
-            <th scope="col" style="width: 200px">Låt</th>
-          </tr>
-        </table>
-      </div>
+  </ul>
+  <div id="search-container">
+    <input type="text" id="search-input" placeholder="Sök här ">
+    <button type="button" id="search-button">Search</button>
+  </div>
+  <div id="content">
+
+    <nav>
+      <ul>
+        <div>
+          <img class="icons" src="./images/sun.png" alt="Sun">
+          <li class="suggestion">
+            Sun</li>
+        </div>
+        <div>
+          <img class="icons" src="./images/mercury.png" alt="'Mercury">
+          <li class="suggestion">
+            Mercury</li>
+        </div>
+        <div>
+          <img class="icons" src="./images/venus.png" alt="Venus">
+          <li class="suggestion">
+            Venus</li>
+        </div>
+        <div>
+          <img class="icons" src="./images/planet-earth.png" alt="Earth">
+          <li class="suggestion">
+            Earth</li>
+        </div>
+        <div>
+          <img class="icons" src="./images/mars.png" alt="mars">
+          <li class="suggestion">
+            Mars</li>
+        </div>
+        <div>
+          <img class="icons" src="./images/jupiter.png" alt="Jupiter">
+          <li class="suggestion">
+            Jupiter</li>
+        </div>
+        <div>
+          <img class="icons" src="./images/planet.png" alt="Planet">
+          <li class="suggestion">
+            Planet</li>
+        </div>
+        <div>
+          <img class="icons" src="./images/uranus.png" alt="Uranus">
+          <li class="suggestion">
+            Uranus</li>
+        </div>
+      </ul>
+    </nav>
+
+    <div id="tableContainer">
+      <table id="imgTable">
+        <tr>
+          <th scope="col" style="width: 40px">Nummer</th>
+          <th scope="col" style="width: 40px">Titel</th>
+          <th scope="col">Bild</th>
+          <th scope="col" style="width: 100px">Beskrivning</th>
+        </tr>
+      </table>
     </div>
-<div id="tracks">
-</div>
-    <script src="script.js" type="text/javascript"></script>
+    <div id="tableContainer">
+      <table id="imgTable2">
+        <tr>
+          <th scope="col" style="width: 40px">Nummer</th>
+          <th scope="col" style="width: 40px">Titel</th>
+          <th scope="col">Bild</th>
+          <th scope="col" style="width: 100px">Beskrivning</th>
+          <th scope="col" style="width: 200px">Låt</th>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="tracks">
+  </div>
+  <script src="script.js" type="text/javascript"></script>
 </body>
+
 </html>
